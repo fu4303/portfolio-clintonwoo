@@ -9,7 +9,7 @@ class MyDocument extends Document {
         <Head>
           <script></script>
         </Head>
-        <body className="dark:bg-gray-800 dark:text-white">
+        <body className="dark:bg-black dark:text-white mx-auto max-w-3xl">
           <Main />
           <NextScript />
         </body>

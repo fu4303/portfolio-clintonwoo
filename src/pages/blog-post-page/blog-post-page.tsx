@@ -20,7 +20,7 @@ export function BlogPostPage(props: IBlogPostPageProps): JSX.Element {
 
   return (
     <MainLayout className="px-8 py-4">
-      <h1 className="font-bold pl-1 pb-2 dark:bg-gray-800">{title}</h1>
+      <h1 className="font-bold pl-1 pb-2">{title}</h1>
       <div>{publishedDateMemo}</div>
       <div className="space-y-4">{blogPostContent}</div>
     </MainLayout>

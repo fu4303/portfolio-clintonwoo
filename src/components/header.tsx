@@ -1,15 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import * as React from "react";
 
 import Link from "next/link";
 
-import { Theme } from "../context/theme-context";
-import { useTheme, useToggleTheme } from "../hooks/use-theme";
+import { updateTheme, Theme, getTheme, saveTheme } from "../utils/theme";
 
 export function Header(): JSX.Element {
-  const currentTheme = useTheme();
-  const toggleTheme = useToggleTheme();
+  const toggleTheme = React.useCallback(() => {
+    const currentTheme = getTheme();
+    const nextTheme = currentTheme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
+    updateTheme(nextTheme);
+    saveTheme(nextTheme);
+  }, []);
 
   return (
     <header className="flex justify-between px-8">
@@ -33,23 +36,16 @@ export function Header(): JSX.Element {
         </span>
         <div className="p-4">
           <button
-            className="bg-gray-600 dark:bg-white px-2 py-1 text-white"
+            className="bg-gray-600 dark:bg-white dark:ring-gray-300 focus:border-none focus:outline-none hover:shadow px-2 py-1 rounded focus:ring-2 ring-gray-500 text-white"
             onClick={toggleTheme}
           >
-            <FontAwesomeIcon
-              className="dark:text-yellow-300 mr-2 text-lg"
-              icon={faSun}
-            />
+            <span className="dark:text-yellow-300 text-lg">
+              <FontAwesomeIcon className="dark:inline hidden" icon={faSun} />
+              <FontAwesomeIcon className="dark:hidden" icon={faMoon} />
+            </span>
           </button>
         </div>
       </div>
     </header>
   );
-}
-function darkThemeClassName(darkThemeClassName: any) {
-  throw new Error("Function not implemented.");
-}
-
-function themeKey(themeKey: any, LIGHT: Theme) {
-  throw new Error("Function not implemented.");
 }

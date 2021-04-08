@@ -9,7 +9,7 @@ export function BlogSummaryCard(props: IBlogPostSummary): JSX.Element {
 
   return (
     <Link href={"/blog/" + slug}>
-      <a className="bg-gray-50 cursor-pointer flex group hover p-2 rounded hover:shadow">
+      <a className="cursor-pointer flex group hover p-2 rounded hover:shadow">
         <img src={thumbnail}></img>
         <div>
           <h2 className={`font-bold group-hover:underline`}>{title}</h2>

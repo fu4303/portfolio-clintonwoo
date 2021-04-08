@@ -10,7 +10,7 @@ import {
 } from "../../src/pages/blog-post-page/blog-post-page";
 import { blogPosts, blogPostMap } from "../../src/data/blog-posts";
 
-export interface IBlogPostPageParams {
+export interface IBlogPostPageParams extends NodeJS.Dict<string> {
   id: string;
 }
 

@@ -15,16 +15,20 @@ export function BlogPage(props: IBlogPageProps): JSX.Element {
     <MainLayout className="px-8 py-4">
       <h1 className="font-bold pl-1 pb-2">Posts</h1>
       <div className="space-y-4">
-        {blogPostSummaries.map((blogPost) => (
-          <BlogSummaryCard
-            key={blogPost.slug}
-            description={blogPost.description}
-            publishDateIso={blogPost.publishDateIso}
-            slug={blogPost.slug}
-            thumbnail={blogPost.thumbnail}
-            title={blogPost.title}
-          />
-        ))}
+        {blogPostSummaries.length > 0 ? (
+          blogPostSummaries.map((blogPost) => (
+            <BlogSummaryCard
+              key={blogPost.slug}
+              description={blogPost.description}
+              publishDateIso={blogPost.publishDateIso}
+              slug={blogPost.slug}
+              thumbnail={blogPost.thumbnail}
+              title={blogPost.title}
+            />
+          ))
+        ) : (
+          <div>No posts yet.</div>
+        )}
       </div>
     </MainLayout>
   );

@@ -15,29 +15,11 @@ enum Month {
 
 const blogOne: IBlogPost = {
   blogPostContent: "",
-  description: "Css tricks",
+  description: "",
   publishDateIso: new Date(2021, Month.JAN, 1).toISOString(),
-  slug: "abc123",
+  slug: "",
   thumbnail: "",
-  title: "CSS Tricks",
-};
-
-const blogTwo: IBlogPost = {
-  blogPostContent: "",
-  description: "How to start a startup",
-  publishDateIso: new Date(2021, Month.JAN, 1).toISOString(),
-  slug: "abc1234",
-  thumbnail: "",
-  title: "How to start a startup",
-};
-
-const blogThree: IBlogPost = {
-  blogPostContent: "",
-  description: "How to start a startup",
-  publishDateIso: new Date(2021, Month.JAN, 1).toISOString(),
-  slug: "abc12345",
-  thumbnail: "",
-  title: "How not to blow up and waste all your cash",
+  title: "",
 };
 
 export interface IBlogPostSummary {
@@ -53,7 +35,7 @@ export interface IBlogPost extends IBlogPostSummary {
 }
 
 /** Blog posts in chronological order, newest first */
-export const blogPosts: IBlogPost[] = [blogThree, blogTwo, blogOne];
+export const blogPosts: IBlogPost[] = [];
 
 export const blogPostMap = blogPosts.reduce<Map<string, IBlogPost>>(
   (acc, curr) => {
