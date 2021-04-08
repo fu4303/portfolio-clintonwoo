@@ -41,3 +41,5 @@ jobs:
           fqdn: clintondannolfo.com # optional
           # Allow Jekyll to build your site
           jekyll: false # optional, default is true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
