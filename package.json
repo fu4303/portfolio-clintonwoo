@@ -7,8 +7,8 @@
     },
     "scripts": {
         "clean": "rm -rf dist && rm -rf ./.next",
-        "build": "npm run clean && next build",
-        "build:prod": "cross-env NODE_ENV=production npm run build",
+        "build": "npm run clean && next build && next export -o docs",
+        "build:prod": "cross-env NODE_ENV=production npm run build && next export -o docs",
         "debug": "cross-env DEBUG=app:* npm start",
         "debug:all": "cross-env DEBUG=* npm start",
         "lint": "eslint \"src/**/*.ts?(x)\" --ext .js,.jsx,.ts,.tsx",
