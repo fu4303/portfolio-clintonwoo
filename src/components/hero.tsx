@@ -6,7 +6,7 @@ import Link from "next/link";
 export function Hero(): JSX.Element {
   return (
     <div
-      className="content-center flex h-80"
+      className="content-center flex flex-col sm:flex-row"
       style={
         {
           // backgroundColor: "#d7d7d7",
@@ -16,9 +16,7 @@ export function Hero(): JSX.Element {
       }
     >
       <div className="flex flex-col justify-center px-8 py-10">
-        <h1 className="font-mono text-lg">
-          Hi, I'm <span className="hover:animate-ping">Clinton D'Annolfo.</span>
-        </h1>
+        <h1 className="font-mono text-lg">Hi, I'm Clinton D'Annolfo.</h1>
         <p>I'm the only person in the world with my name.</p>
         <p>
           I'm passionate about technology and making a (good) dent on the
@@ -26,14 +24,14 @@ export function Hero(): JSX.Element {
         </p>
         <p>I'll do anything to help.</p>
       </div>
-      <div className="flex flex-auto items-center justify-center p-4">
+      {/* <div className="flex flex-auto items-center justify-center p-4">
         <Link href="/blog">
-          <button className="bg-blue-600 flex-initial hover:shadow-inner px-4 py-2 rounded text-white">
+          <button className="bg-blue-600 flex flex-initial hover:shadow-inner items-center px-4 py-2 rounded text-white">
             <span className="pr-2">Read my blog </span>
             <FontAwesomeIcon className="text-lg" icon={faArrowRight} />
           </button>
-        </Link>
-      </div>
+        </Link> 
+      </div>*/}
     </div>
   );
 }

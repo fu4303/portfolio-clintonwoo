@@ -24,11 +24,11 @@ export function Header(): JSX.Element {
             </span>
           </a>
         </Link>
-        <Link href="/blog">
+        {/* <Link href="/blog">
           <a className="dark:hover:bg-gray-700 flex items-center px-6 py-4 hover:bg-gray-100 hover:underline focus:underline">
             Blog
           </a>
-        </Link>
+        </Link> */}
       </div>
       <div className="flex">
         <span className="cursor-pointer flex p-0.5">
