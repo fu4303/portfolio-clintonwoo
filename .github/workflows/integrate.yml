@@ -36,7 +36,7 @@ jobs:
           # Git branch where assets will be deployed
           target_branch: gh-pages # optional, default is gh-pages
           # Build directory to deploy
-          build_dir: docs
+          build_dir: dist
           # Write the given domain name to the CNAME file
           fqdn: clintondannolfo.com # optional
           # Allow Jekyll to build your site
